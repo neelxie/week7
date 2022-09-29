@@ -8,13 +8,26 @@ animals have different sounds.
 When you have made the classes, create instances of the classes and put in a list - loop through the list - 
 and let all the animals talk! :) """
 class Animal:
-    def __init__(self, name, food, age):
-        self.name = name
-        self.food = food
-        self.age = age
+    def __init__(self, name, age):
+        self.__name = name
+        self.__food = []
+        self.__age = age
+    def get_name(self):
+      return self.__name
 
-    def __repr__(self):
-        return f"Name: {self.name} \n Age: {self.age} "
+    def set_name(self, name):
+      self.__name = name
+    def get_age(self):
+      return self.__age
+    def set_age(self, age):
+      self.__age = age
+    def get_food(self):
+      return self.__food
+    def add_food(self, food):
+      self.__food.append(food) 
+    def remove_food(self, item):
+      self.__food.remove(item)
+
 
     def talk(self):
         print("talk")
@@ -44,11 +57,15 @@ class Cow(Animal):
     def talk(self):
         print("Muuu")
 
-my_dog = Dog("Puppy", "black", "1 year", "Bull dog")
-my_dog.eat()
-my_dog.sleep()
-my_dog.bark()
-my_dog.make_sound()
+my_dog = Dog("Puppy", "milk", 1)
+my_cat = Cat("Kitty", "milk", 2)
+my_cow = Cow("calf", "milk", 3)
+my_fish = Fish("tilapia", "crumbs", 4)
+
+my_list = [my_cat, my_cow, my_dog, my_fish]
+for i in range(len(my_list)):
+  i.talk()
+
 """
 
 The snail climbs up 7 feet each day and slips back 2 feet each night. How many days will it take the snail 
